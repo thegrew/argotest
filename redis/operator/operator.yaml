@@ -4,7 +4,8 @@ metadata:
   labels:
     app: redisoperator
   name: redisoperator
-  argocd.argoproj.io/sync-wave: "-1"
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   replicas: 1
   selector:
