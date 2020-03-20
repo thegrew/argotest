@@ -1,42 +1,42 @@
-#apiVersion: databases.spotahome.com/v1
-#kind: RedisFailover
-#metadata:
-#  name: cts-redis
-#  annotations:
-#    argocd.argoproj.io/sync-wave: "1"
-#spec:
-#  sentinel:
-#    replicas: 3
-#    image: redis:5.0.7-alpine
-#    imagePullPolicy: IfNotPresent
-#    metadata:
-#      labels: sentinel
-#    resources:
-#      requests:
-#        cpu: 100m
-#      limits:
-#        memory: 100Mi
+apiVersion: databases.spotahome.com/v1
+kind: RedisFailover
+metadata:
+  name: cts-redis
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  sentinel:
+    replicas: 3
+    image: redis:5.0.7-alpine
+    imagePullPolicy: IfNotPresent
+    metadata:
+      labels: sentinel
+    resources:
+      requests:
+        cpu: 100m
+      limits:
+        memory: 100Mi
 
-#  redis:
-#    replicas: 3
-#    image: redis:5.0.7-alpine
-#    imagePullPolicy: IfNotPresent       
-#    metadata:
-#      labels: redis
-#    resources:
-#      requests:
-#        cpu: 100m
-#        memory: 100Mi
-#      limits:
-#        cpu: 400m
-#        memory: 500Mi
-#    storage:
-#      persistentVolumeClaim:
-#        metadata:
-#          name: rediscluster-persistent-data
-#        spec:
-#          accessModes:
-#            - ReadWriteOnce
-#          resources:
-#            requests:
-#              storage: 1Gi
+  redis:
+    replicas: 3
+    image: redis:5.0.7-alpine
+    imagePullPolicy: IfNotPresent       
+    metadata:
+      labels: redis
+    resources:
+      requests:
+        cpu: 100m
+        memory: 100Mi
+      limits:
+        cpu: 400m
+        memory: 500Mi
+    storage:
+      persistentVolumeClaim:
+        metadata:
+          name: rediscluster-persistent-data
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
