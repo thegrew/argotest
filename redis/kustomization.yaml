@@ -5,3 +5,4 @@ resources:
 - operator/roles.yaml
 - operator/rolebinding.yaml
 - operator/serviceaccount.yaml
+- redis-cluster/redis-cluster.yaml
