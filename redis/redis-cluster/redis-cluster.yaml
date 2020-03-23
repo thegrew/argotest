@@ -1,6 +1,4 @@
 metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "1" 
 apiVersion: databases.spotahome.com/v1
 kind: RedisFailover
 metadata:
