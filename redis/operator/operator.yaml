@@ -5,7 +5,7 @@ metadata:
     app: redisoperator
   name: redisoperator
   annotations:
-    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/hook: PreSync
 spec:
   replicas: 1
   selector:
