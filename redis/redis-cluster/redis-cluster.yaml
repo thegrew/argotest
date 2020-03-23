@@ -3,6 +3,8 @@ apiVersion: databases.spotahome.com/v1
 kind: RedisFailover
 metadata:
   name: cts-redis
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   sentinel:
     replicas: 3
