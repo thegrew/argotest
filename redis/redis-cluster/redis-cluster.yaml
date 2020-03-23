@@ -16,7 +16,7 @@ spec:
         memory: 100Mi
 
   redis:
-    replicas: 3
+    replicas: 6
     image: redis:5.0.7-alpine
     imagePullPolicy: IfNotPresent       
     metadata:
